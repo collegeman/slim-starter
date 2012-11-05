@@ -1,0 +1,14 @@
+# ga-lib
+
+## Requirements
+
+* PHP 5.3
+* MySQL 5+
+* Memcached
+* Registered Client ID and Secret for Google APIs
+
+## Installation
+
+    cp config.php-default config.php
+
+Then edit `config.php` and configure to your liking.
