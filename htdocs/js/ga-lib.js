@@ -44,10 +44,10 @@
         url: '/api/accounts'
       }));
       
-      this.$el.height( $(window).height() );
+      this.$el.height( $(window).height() - parseInt(this.$el.css('padding-top')) );
 
       $(window).resize(function() {
-        that.$el.height( $(window).height() );
+        that.$el.height( $(window).height() - parseInt(that.$el.css('padding-top')) );
       });
 
       this.$list = this.$('ul');
@@ -111,9 +111,10 @@
     initialize: function() {
       var that = this;
 
-      this.$el.height( $(window).height() );
+      this.$el.height( $(window).height() - parseInt(this.$el.css('padding-top')) );
+
       $(window).resize(function() {
-        that.$el.height( $(window).height() );
+        that.$el.height( $(window).height() - parseInt(that.$el.css('padding-top')) );
       });
 
       this.collection = new (B.Collection.extend({

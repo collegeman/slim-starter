@@ -1,0 +1,7 @@
+<?php
+define('GA_LIB_DB', 'mysql:host=127.0.0.1;dbname=ga-lib');
+define('GA_LIB_DB_USER', '');
+define('GA_LIB_DB_PASS', '');
+define('GA_LIB_CLIENT_ID', '');
+define('GA_LIB_CLIENT_SECRET', '');
+define('GA_LIB_MEMCACHED', '');

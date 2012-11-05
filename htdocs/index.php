@@ -1,92 +1,34 @@
 <?php
-define('GALIB', __FILE__);
-define('GALIB_DIR', realpath('../'.dirname(GA_LIB)));
+define('GA_LIB', __FILE__);
+define('GA_LIB_DIR', realpath(dirname(__FILE__).'/../'));
 
-require(GALIB_DIR.'/config.php');
-require(GALIB_DIR.'/Slim/Slim.php');
-require(GALIB_DIR.'/lib/google/Google_Client.php');
-require(GALIB_DIR.'/lib/google/contrib/Google_AnalyticsService.php');
-
-function ga_sum_dimension($response, $dimension, $label, $metric) {
-  $value = 0;
-  $dcount = count(explode(',', $response['query']['dimensions']));
-  $mi = $dcount + $metric;
-  foreach($response['rows'] as $row) {
-    $d = $row[$dimension];
-    if (strpos($label, '%')) {
-      $l = str_replace('%', '', $label);
-      if (strpos($d, $l) !== false) {
-        $value += $row[$mi];
-      }
-    } else if ($d === $label) {
-      $value += $row[$mi];
-    }
-  }
-  return $value;
-}
-
-function ga_get_profile_data($profile_id, $start, $end) {
-  global $service;
-
-  $response = $service->data_ga->get(
-    'ga:'.$profile_id, 
-    $start,
-    $end, 
-    'ga:pageviews,ga:visitors,ga:organicSearches',
-    array(
-      'dimensions' => 'ga:socialNetwork,ga:source,ga:week'
-    )
-  );
-
-  return array(
-    'start' => $response['query']['start-date'],
-    'end' => $response['query']['end-date'],
-    'pageviews' => $response['totalsForAllResults']['ga:pageviews'],
-    'visitors' => $response['totalsForAllResults']['ga:visitors'],
-    'pageviewbysource' => array(
-      'facebook' => ga_sum_dimension($response, 0, 'Facebook', 1),
-      'twitter' => ga_sum_dimension($response, 0, 'Twitter', 1),
-      'pinterest' => ga_sum_dimension($response, 0, 'Pinterest', 1),
-      'google' => ga_sum_dimension($response, 1, 'google%', 0)
-    )
-  );  
-}
-
-function ga_get_profile($profile_id) {
-  global $service;
-
-
-}
+require(GA_LIB_DIR.'/config.php');
+require(GA_LIB_DIR.'/Slim/Slim.php');
+require(GA_LIB_DIR.'/lib/google/Google_Client.php');
+require(GA_LIB_DIR.'/lib/google/contrib/Google_AnalyticsService.php');
+require(GA_LIB_DIR.'/lib/google/contrib/Google_Oauth2Service.php');
+require(GA_LIB_DIR.'/lib/memcached.php');
+require(GA_LIB_DIR.'/lib/db.php');
+require(GA_LIB_DIR.'/lib/session.php');
+require(GA_LIB_DIR.'/lib/google.php');
 
 \Slim\Slim::registerAutoloader();
 
 $app = new \Slim\Slim(array(
-  'templates.path' => GALIB_DIR.'/templates'
+  'templates.path' => GA_LIB_DIR.'/templates'
 ));
-
-$client = new Google_Client();
-$client->setApplicationName('GA Lib');
-$client->setClientId(GA_CLIENT_ID);
-$client->setClientSecret(GA_CLIENT_SECRET);
-$client->setRedirectUri('http://'.$_SERVER['HTTP_HOST'].'/auth');
-$service = new Google_AnalyticsService($client);
   
-@session_start();
-
-if (!empty($_SESSION['token'])) {  
-  $client->setAccessToken($_SESSION['token']);
-} else {
-  $service = false;
-}
-
-$app->get('/', function() use ($app, $service) {
+$app->get('/', function() use ($app, $gaservice) {
+  if (!has_session()) {
+    return $app->response()->redirect('/login');
+  }
   $app->render('index.php');
 });
 
-$app->get('/api/accounts', function() use ($app, $service) {
+$app->get('/api/accounts', function() use ($app, $gaservice) {
   $app->response()->header('Content-Type', 'application/json');
-  if ($service) {
-    $response = $service->management_accounts->listManagementAccounts();
+  if ($gaservice) {
+    $response = $gaservice->management_accounts->listManagementAccounts();
     $accounts = $response['items'];
     usort($accounts, function($a, $b) {
       return strcasecmp($a['name'], $b['name']);
@@ -95,10 +37,10 @@ $app->get('/api/accounts', function() use ($app, $service) {
   }
 });
 
-$app->get('/api/profiles/:account_id', function($account_id = null) use ($app, $service) {
+$app->get('/api/profiles/:account_id', function($account_id = null) use ($app, $gaservice) {
   $app->response()->header('Content-Type', 'application/json');
-  if ($service && $account_id) {
-    $response = $service->management_profiles->listManagementProfiles($account_id, '~all');
+  if ($gaservice && $account_id) {
+    $response = $gaservice->management_profiles->listManagementProfiles($account_id, '~all');
     $profiles = $response['items'];
     usort($profiles, function($a, $b) {
       return strcasecmp($a['name'], $b['name']);
@@ -107,14 +49,40 @@ $app->get('/api/profiles/:account_id', function($account_id = null) use ($app, $
   }
 });
 
-$app->get('/api/profile/:profile_id', function($profile_id = null) use ($app, $service) {
+$app->get('/api/profile/:profile_id/chart', function($profile_id = null) use ($app, $gaservice) {
   $app->response()->header('Content-Type', 'application/json');
-  if ($service && $profile_id) {
+  if ($gaservice && $profile_id) {
+    $metrics = $app->request()->get('metrics');
+    $dimensions = $app->request()->get('dimensions');
+    $start = $app->request()->get('start');
+    $end = $app->request()->get('end');
+    $filters = $app->request()->get('filters');
+    $data = ga_get_profile_chart(
+      $profile_id, 
+      $start ? $start : date('Y-m-d', strtotime('-1 month')),
+      $end ? $end : date('Y-m-d'),
+      $metrics ? $metrics : 'ga:pageviews,ga:visitors',
+      $dimensions ? $dimensions : 'ga:week,ga:date',
+      $filters ? $filters : false
+    );
+    echo json_encode($data);
+  }
+});
 
-    $data = array();
+$app->get('/api/profile/:profile_id', function($profile_id = null) use ($app, $gaservice) {
+  $app->response()->header('Content-Type', 'application/json');
+  if ($gaservice && $profile_id) {
+
+    $cache_key = "profile/{$profile_id}";
+    if (!$app->request()->get('flush') && ( $cache = cached($cache_key) )) {
+      echo json_encode($cache);
+      return;
+    }
+
+    $data = array('id' => $profile_id);
     
-    // try {
-      
+    try {
+
       $data['today'] = ga_get_profile_data(
         $profile_id, 
         date('Y-m-d'), 
@@ -136,6 +104,12 @@ $app->get('/api/profile/:profile_id', function($profile_id = null) use ($app, $s
       $data['today']['pageviewschange'] = ($data['today']['pageviews'] - $data['yesterday']['pageviews'])/$data['yesterday']['pageviews'];
       $data['yesterday']['pageviewschange'] = ($data['yesterday']['pageviews'] - $data['twodaysago']['pageviews'])/$data['twodaysago']['pageviews'];
       
+      $data['lastthirty'] = ga_get_profile_data(
+        $profile_id,
+        date('Y-m-d', strtotime('-1 month')),
+        date('Y-m-d')
+      );
+
       $data['thismonth'] = ga_get_profile_data(
         $profile_id,
         date('Y-m-01'),
@@ -170,15 +144,16 @@ $app->get('/api/profile/:profile_id', function($profile_id = null) use ($app, $s
       
       $data['thisyear']['pageviewschange'] = ($data['thisyear']['pageviews'] - $data['lastyear']['pageviews'])/$data['lastyear']['pageviews'];
 
-      $data['cached'] = false;
-      $data['id'] = $profile_id;
+      $data['cached'] = time();
+      
+      cache($cache_key, $data, 300);
 
       echo json_encode($data);
 
-    // } catch (Exception $e) {
-    //   $app->response()->status(400);
-    //   echo json_encode(array('error' => $e->getMessage()));
-    // }
+    } catch (Exception $e) {
+      $app->response()->status(400);
+      echo json_encode(array('error' => $e->getMessage()));
+    }
 
   }
 });
@@ -192,10 +167,11 @@ $app->get('/logout', function() use ($app) {
   $app->response()->redirect('/');
 });
 
-$app->get('/auth', function() use ($app, $client) {
+$app->get('/auth', function() use ($app, $client, $infoservice) {
   if ($app->request()->get('code')) {
-    $client->authenticate();
-    $_SESSION['token'] = $client->getAccessToken();
+    if ($client->authenticate()) {
+      login_with_google();
+    }
   }
   return $app->response()->redirect('/');
 });

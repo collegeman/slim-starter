@@ -46,6 +46,7 @@
     <script src="/js/backbone.js"></script>
     <script src="/js/hammer.js"></script>
     <script src="/js/jquery.hammer.js"></script>
+    <script src="/js/protovis.js"></script>
     <script src="/js/ga-lib.js"></script>
   </body>
 </html>

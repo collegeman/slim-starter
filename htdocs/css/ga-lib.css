@@ -9,7 +9,7 @@ body {
   padding: 40px 5px 5px 5px;
   overflow-x: hidden;
   overflow-y: scroll;
-  height: 300px;
+  -webkit-overflow-scrolling: touch;
   -webkit-transition-property: left;
   -webkit-transition-duration: 0.1s;
 }
