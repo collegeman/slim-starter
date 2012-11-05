@@ -18,13 +18,35 @@ function config($name, $default = false, $use_app = null) {
   $a = is_null($use_app) ? $app : $use_app;
   $constant = strtoupper(str_replace('.', '_', $name));
   if (defined($constant)) {
-    return constant($constant);
+    $value = constant($constant);
   } else if (isset($_SERVER[$constant])) {
-    return $_SERVER[$constant];
+    $value = $_SERVER[$constant];
   } else if (!empty($a)) {
     $value = $a->config($name);
-    return empty($value) ? $default : $value;
+    $value = empty($value) ? $default : $value;
   } else {
-    return $default;
+    $value = $default;
   }
+  error_log("config {$name}={$value}");
+  return $value;
+}
+
+function debug_log($object) {
+  global $log; $log->debug($object);
+}
+
+function info_log($object) {
+  global $log; $log->info($object);
+}
+
+function warn_log($object) {
+  global $log; $log->warn($object);
+}
+
+function err_log($object) {
+  global $log; $log->error($object);
+}
+
+function fatal_log($object) {
+  global $log; $log->fatal($object);
 }

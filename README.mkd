@@ -6,7 +6,9 @@
 * MySQL 5+
 * Memcached extension
 * cURL extension
-* Registered Client ID and Secret for Google APIs
+* PDO
+
+You'll also need to [register](https://code.google.com/apis/console) for a Google App Client ID and Secret for Google APIs
 
 ## Installation
 

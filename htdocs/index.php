@@ -10,8 +10,12 @@ require(GA_LIB_DIR.'/Slim/Slim.php');
 \Slim\Slim::registerAutoloader();
 
 $app = new \Slim\Slim(array(
-  'templates.path' => GA_LIB_DIR.'/templates'
+  'templates.path' => GA_LIB_DIR.'/templates',
+  'log.enabled' => true
 ));  
+
+$log = $app->getLog();
+$log->setLevel(\Slim\Log::DEBUG);
 
 require(GA_LIB_DIR.'/lib/config.php');
 require(GA_LIB_DIR.'/lib/google/Google_Client.php');
