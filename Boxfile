@@ -6,6 +6,7 @@ web1: #component type & number
     - mysql
     - memcached
     - curl
+    - pdo_mysql
      
 db1: #component type & number 
   name: ga-lib            #component settings
