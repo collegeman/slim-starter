@@ -17,6 +17,48 @@ if ($user = has_session()) {
   $gaservice = false;
 }
 
+function ga_get_accounts() {
+  global $gaservice, $current_user;
+
+  $cache_key = "ga_get_accounts({$current_user->id})";
+  if ($cache = cached($cache_key)) {
+    return $cache;
+  }
+
+  $response = $gaservice->management_accounts->listManagementAccounts();
+  
+  $accounts = $response['items'];
+  
+  usort($accounts, function($a, $b) {
+    return strcasecmp($a['name'], $b['name']);
+  });
+
+  cache($cache_key, $accounts, 300);
+
+  return $accounts;
+}
+
+function ga_get_profiles($account_id) {
+  global $gaservice;
+
+  $cache_key = "ga_get_profiles({$account_id})";
+  if ($cache = cached($cache_key)) {
+    return $cache;
+  }
+
+  $response = $gaservice->management_profiles->listManagementProfiles($account_id, '~all');
+  
+  $profiles = $response['items'];
+  
+  usort($profiles, function($a, $b) {
+    return strcasecmp($a['name'], $b['name']);
+  });
+
+  cache($cache_key, $profiles, 300);
+
+  return $profiles;
+}
+
 function ga_sum_dimension($response, $dimension, $label, $metric) {
   $value = 0;
   if (!empty($response['rows'])) {

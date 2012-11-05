@@ -28,24 +28,26 @@ $app->get('/', function() use ($app, $gaservice) {
 $app->get('/api/accounts', function() use ($app, $gaservice) {
   $app->response()->header('Content-Type', 'application/json');
   if ($gaservice) {
-    $response = $gaservice->management_accounts->listManagementAccounts();
-    $accounts = $response['items'];
-    usort($accounts, function($a, $b) {
-      return strcasecmp($a['name'], $b['name']);
-    });
-    echo json_encode($accounts);
+    try {
+      $accounts = ga_get_accounts();
+      echo json_encode($accounts);
+    } catch (Exception $e) {
+      $app->response()->status(400);
+      echo json_encode( array('error' => $e->getMessage()) );
+    }
   }
 });
 
 $app->get('/api/profiles/:account_id', function($account_id = null) use ($app, $gaservice) {
   $app->response()->header('Content-Type', 'application/json');
   if ($gaservice && $account_id) {
-    $response = $gaservice->management_profiles->listManagementProfiles($account_id, '~all');
-    $profiles = $response['items'];
-    usort($profiles, function($a, $b) {
-      return strcasecmp($a['name'], $b['name']);
-    });
-    echo json_encode($profiles);
+    try {
+      $profiles = ga_get_profiles($account_id);
+      echo json_encode($profiles);
+    } catch (Exception $e) {
+      $app->response()->status(400);
+      echo json_encode( array('error' => $e->getMessage()) );
+    }
   }
 });
 
