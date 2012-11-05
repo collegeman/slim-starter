@@ -1,6 +1,6 @@
 <?php
 require(GA_LIB_DIR.'/lib/idiorm.php');
 
-ORM::configure(GA_LIB_DB);
-ORM::configure('username', GA_LIB_DB_USER);
-ORM::configure('password', GA_LIB_DB_PASS);
+ORM::configure(config('ga.lib.db'));
+ORM::configure('username', config('ga.lib.db.user'));
+ORM::configure('password', config('ga.lib.db.pass'));

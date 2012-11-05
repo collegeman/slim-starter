@@ -2,9 +2,10 @@
 
 ## Requirements
 
-* PHP 5.3
+* PHP 5.3.8
 * MySQL 5+
-* Memcached
+* Memcached extension
+* cURL extension
 * Registered Client ID and Secret for Google APIs
 
 ## Installation

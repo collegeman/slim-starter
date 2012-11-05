@@ -1,8 +1,8 @@
 <?php
 $client = new Google_Client();
 $client->setApplicationName('GA Lib');
-$client->setClientId(GA_LIB_CLIENT_ID);
-$client->setClientSecret(GA_LIB_CLIENT_SECRET);
+$client->setClientId(config('ga.lib.client.id'));
+$client->setClientSecret(config('ga.lib.client.secret'));
 $client->setRedirectUri('http://'.$_SERVER['HTTP_HOST'].'/auth');
 $gaservice = new Google_AnalyticsService($client);
 $infoservice = new Google_Oauth2Service($client);
@@ -21,7 +21,7 @@ function ga_get_accounts() {
   global $gaservice, $current_user;
 
   $cache_key = "ga_get_accounts({$current_user->id})";
-  if ($cache = cached($cache_key)) {
+  if ($cache = memget($cache_key)) {
     return $cache;
   }
 
@@ -33,7 +33,7 @@ function ga_get_accounts() {
     return strcasecmp($a['name'], $b['name']);
   });
 
-  cache($cache_key, $accounts, 300);
+  memset($cache_key, $accounts, 300);
 
   return $accounts;
 }
@@ -42,7 +42,7 @@ function ga_get_profiles($account_id) {
   global $gaservice;
 
   $cache_key = "ga_get_profiles({$account_id})";
-  if ($cache = cached($cache_key)) {
+  if ($cache = memget($cache_key)) {
     return $cache;
   }
 
@@ -54,7 +54,7 @@ function ga_get_profiles($account_id) {
     return strcasecmp($a['name'], $b['name']);
   });
 
-  cache($cache_key, $profiles, 300);
+  memset($cache_key, $profiles, 300);
 
   return $profiles;
 }
@@ -83,7 +83,7 @@ function ga_get_profile_chart($profile_id, $start, $end, $metrics = 'ga:pageview
   global $gaservice;
 
   $cache_key = md5("ga_get_profile_chart({$profile_id},{$start},{$end},{$metrics},{$dimensions},{$filters})");
-  if (!$debug && ($cache = cached($cache_key))) {
+  if (!$debug && ($cache = memget($cache_key))) {
     return $cache;
   }
 
@@ -114,7 +114,7 @@ function ga_get_profile_chart($profile_id, $start, $end, $metrics = 'ga:pageview
 
   $data['cached'] = time();
   // TODO: use longer timeout for older data
-  cache($cache_key, $data, 300);
+  memset($cache_key, $data, 300);
 
   if ($debug) {
     $data['response'] = $response;
@@ -127,7 +127,7 @@ function ga_get_profile_data($profile_id, $start, $end, $debug = false) {
   global $gaservice;
 
   $cache_key = md5("ga_get_profile_data({$profile_id},{$start},{$end})");
-  if (!$debug && ($cache = cached($cache_key))) {
+  if (!$debug && ($cache = memget($cache_key))) {
     return $cache;
   }
 
@@ -155,7 +155,7 @@ function ga_get_profile_data($profile_id, $start, $end, $debug = false) {
   );
 
   $data['cached'] = time();
-  cache($cache_key, $data, 300);  
+  memset($cache_key, $data, 300);  
 
   if ($debug) {
     $data['response'] = $response;
