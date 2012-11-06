@@ -1,4 +1,8 @@
 <?php
+$app->get('/info', function() {
+  phpinfo();
+});
+
 $app->get('/', function() use ($app, $gaservice) {
   if (!has_session()) {
     return $app->response()->redirect('/login');
