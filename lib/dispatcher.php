@@ -3,6 +3,11 @@ $app->get('/info', function() {
   phpinfo();
 });
 
+$app->get('/server', function() {
+  echo '<pre>';
+  print_r($_SERVER);
+});
+
 $app->get('/', function() use ($app, $gaservice) {
   if (!has_session()) {
     return $app->response()->redirect('/login');
