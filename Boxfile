@@ -5,10 +5,8 @@ web1: #component type & number
   shared_writable_dirs:
     - var/logs
   php_extensions:
-    - mysql
     - memcached
     - curl
-    - pdo
     - pdo_mysql
      
 db1: #component type & number 
