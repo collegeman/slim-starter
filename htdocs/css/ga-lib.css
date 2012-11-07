@@ -174,7 +174,7 @@ body {
 }
 
 .deck .widget.h2 label {
-  top: 4px;
+  top: 8px;
 }
 
 .deck .widget .pad {
@@ -246,7 +246,7 @@ body {
 
 .deck > ul li {
   width: 308px;
-  margin-top: 6px;
+  margin-top: 2px;
   margin-left: 6px;
   display: block;
   float: left;
