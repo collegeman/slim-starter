@@ -4,9 +4,15 @@
 
   if (!window.console) window.console = { log: function() {}, error: function() {} };
 
-  var main, accountsNav, profilesNav;
+  var main, accountsNav, profilesNav, deckView;
 
   var selectedAccount;
+
+  var DeckView = B.View.extend({
+    initialize: function() {
+      this.$('li.profile').height( this.$el.height() - 57 );
+    }
+  });
 
   var AccountsNavItemView = B.View.extend({
     tagName: 'li',
@@ -158,6 +164,7 @@
   $(function() {
     accountsNav = new AccountsNavView({ el: $('#account-nav') });
     profilesNav = new ProfilesNavView({ el: $('#profile-nav') });
+    deckView = new DeckView({ el: $('#deck') });
     main = new MainView({ el: $('body') });
   });
 

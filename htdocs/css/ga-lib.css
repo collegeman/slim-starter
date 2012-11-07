@@ -85,16 +85,18 @@ body {
 #account-nav .search-query {
   width: 215px;
 }
+
 #profile-nav {
   left: 0;
   -webkit-box-shadow: -4px 0px 5px rgba(0, 0, 0, 0.25);
   -moz-box-shadow:    -4px 0px 5px rgba(0, 0, 0, 0.25);
   box-shadow:         -4px 0px 5px rgba(0, 0, 0, 0.25);
 }
+
 #profiles {
   margin: 0;
   padding: 0;
-  background-color: white;
+  background-color: #eeeeee;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -106,6 +108,156 @@ body {
   -webkit-transition-duration: 0.1s;
 }
 
+#profiles > .deck {
+  margin: 40px 0 0 0;
+  padding: 0;
+  border-top: 1px solid #ccc;
+  min-width: 300px;
+  height: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: #ddd;
+  -webkit-overflow-scrolling: touch;
+}
+
+#profiles .btn-profiles {
+  -webkit-transition-property: left;
+  -webkit-transition-duration: 0.1s;  
+  position: absolute;
+  top: 5px;
+  left: 6px;
+}
+
+.deck > ul {
+  margin: 0;
+  padding: 0 6px 0 0;
+  width: 5000px;
+}
+
+.deck {
+  font-family: 'Jockey One', sans-serif;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.deck .profile-title {
+  padding: 6px;
+}
+
+.deck .widget {
+  margin: 2px;
+  float: left;
+}
+
+.deck .widget.h1 {
+  height: 40px;
+}
+
+.deck .widget.h2 {
+  height: 84px;
+}
+
+.deck .widget.w1 {
+  width: 73px;
+}
+
+.deck .widget.w2 {
+  width: 150px;
+}
+
+.deck .widget.w3 {
+  width: 227px;
+}
+
+.deck .widget.w4 {
+  width: 304px;
+}
+
+.deck .widget.h2 label {
+  top: 4px;
+}
+
+.deck .widget .pad {
+  position: relative;
+  padding: 4px;
+}
+
+.deck .widget.h1 .pad {
+  height: 32px;
+}
+
+.deck .widget.h2 .pad {
+  height: 76px;
+}
+
+.deck .widget label {
+  position: absolute;
+  font-weight: normal;
+  top: 0px;
+}
+
+.deck .f1 {
+  font-size: 25px;
+  line-height: 27px;
+}
+
+.deck .f2 {
+  font-size: 23px;
+  line-height: 25px;
+}
+
+.deck .f3 {
+  font-size: 21px;
+  line-height: 23px;
+}
+
+.deck .f4 {
+  font-size: 17px;
+  line-height: 19px;
+}
+
+.deck .f5 {
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.deck .red {
+  color: #C73737;
+}
+
+.deck .black {
+  color: #444444;
+}
+
+.deck .blue {
+  color: #4B93D5;
+}
+
+.deck .n {
+  position: absolute;
+  font-family: 'Ranchers', sans-serif;
+  bottom: 2px;
+}
+
+.deck .n.f1 {
+  font-size: 55px;
+  line-height: 55px;
+}
+
+.deck > ul li {
+  width: 308px;
+  margin-top: 6px;
+  margin-left: 6px;
+  display: block;
+  float: left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.deck > ul li:last-child {
+  margin-right: 7px;
+}
+
 body.profiles-open #profiles {
   left: 300px;
 }
@@ -113,26 +265,7 @@ body.profiles-open #profiles {
 body.accounts-open #profile-nav {
   left: 280px;
 }
+
 body.accounts-open #profiles {
   left: 300px;
-}
-
-#profiles .btn-profiles {
-  -webkit-transition-property: left;
-  -webkit-transition-duration: 0.1s;  
-  position: fixed;
-  top: 7px;
-  left: 7px;
-}
-
-body.profiles-open #profiles .btn-profiles {
-  left: 307px;
-}
-
-#profiles ul {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  margin: 0;
-  padding: 0;
 }
