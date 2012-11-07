@@ -1,6 +1,6 @@
 <?php
 $mem = new Memcached;
-$mem->addServer(config('ga.lib.memcached'), '11211');
+$mem->addServer(config('cache1.host'), config('cache1.port'));
 
 function memset($key, $value, $timeout = 0) {
   global $mem;

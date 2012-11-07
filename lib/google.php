@@ -1,8 +1,8 @@
 <?php
 $client = new Google_Client();
 $client->setApplicationName('GA Lib');
-$client->setClientId(config('ga.lib.client.id'));
-$client->setClientSecret(config('ga.lib.client.secret'));
+$client->setClientId(config('google.client.id'));
+$client->setClientSecret(config('google.client.secret'));
 $client->setRedirectUri('http://'.$_SERVER['HTTP_HOST'].'/auth');
 $gaservice = new Google_AnalyticsService($client);
 $infoservice = new Google_Oauth2Service($client);
