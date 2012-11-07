@@ -7,8 +7,7 @@ body {
   width: 290px;
   background-color: #333333;
   padding: 40px 5px 5px 5px;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
   -webkit-transition-property: left;
   -webkit-transition-duration: 0.1s;
@@ -23,7 +22,7 @@ body {
 .nav-menu > .topbar {
   position: absolute;
   top: 0;
-  width: 300px;
+  width: 290px;
   background-color: #222222;
   margin: -5px -5px 0;
   padding: 10px 5px 0;
@@ -77,6 +76,9 @@ body {
 }
 #account-nav {
   left: 0;
+  width: 270px;
+}
+#account-nav .topbar {
   width: 270px;
 }
 #account-nav > ul li a span {

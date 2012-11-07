@@ -211,22 +211,567 @@
               </div>
             </div>
           </li>
-          <li class="profile"></li>
-          <li class="profile"></li>
-          <li class="profile"></li>
-          <li class="profile"></li>
-          <li class="profile"></li>
+          <li class="profile">
+            <div class="profile-title">
+              <span class="black f3">Squidoo: Main</span>
+            </div>
+            <div class="grid">
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">Pageviews&nbsp;&nbsp;<span class="f5">Today</span></label>
+                  <span class="n f1 blue">1.842M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-100%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-45%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Facebook</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Twitter</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Google</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Visitors</span></label>
+                  <span class="n f4 red">0</span>
+                </div>
+              </div>
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1"></div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 blue">+12%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19M</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19N</span>
+                </div>
+              </div>
+              <div class="widget w4 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w4 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="profile">
+            <div class="profile-title">
+              <span class="black f3">Squidoo: Main</span>
+            </div>
+            <div class="grid">
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">Pageviews&nbsp;&nbsp;<span class="f5">Today</span></label>
+                  <span class="n f1 blue">1.842M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-100%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-45%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Facebook</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Twitter</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Google</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Visitors</span></label>
+                  <span class="n f4 red">0</span>
+                </div>
+              </div>
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1"></div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 blue">+12%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19M</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19N</span>
+                </div>
+              </div>
+              <div class="widget w4 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w4 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="profile">
+            <div class="profile-title">
+              <span class="black f3">Squidoo: Main</span>
+            </div>
+            <div class="grid">
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">Pageviews&nbsp;&nbsp;<span class="f5">Today</span></label>
+                  <span class="n f1 blue">1.842M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-100%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Yesterday</span></label>
+                  <span class="n f4 red">-45%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Facebook</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Twitter</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Google</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">Visitors</span></label>
+                  <span class="n f4 red">0</span>
+                </div>
+              </div>
+              <div class="widget w3 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1"></div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 blue">+12%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19M</span>
+                </div>
+              </div>
+              <div class="widget w2 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19N</span>
+                </div>
+              </div>
+              <div class="widget w4 h2">
+                <div class="pad">
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+              <div class="widget w1 h1">
+                <div class="pad">
+                  <label><span class="f5">November</span></label>
+                  <span class="n f4 red">-00%</span>
+                </div>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script src="/js/underscore.js"></script>
     <script src="/js/backbone.js"></script>
-    <!--
     <script src="/js/bootstrap.js"></script>
     <script src="/js/hammer.js"></script>
     <script src="/js/jquery.hammer.js"></script>
-    -->
     <script src="/js/protovis.js"></script>
     <script src="/js/ga-lib.js"></script>
   </body>

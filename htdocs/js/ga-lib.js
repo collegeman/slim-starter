@@ -130,6 +130,13 @@
       }));
       this.$list = this.$('ul');
       this.collection.on('reset', _.bind(this.render, this));
+
+      this.$el.hammer().on('drag', function(e) {
+        if (e.direction === 'left') {
+          e.preventDefault();
+          return false;
+        }
+      });
     },
     render: function() {
       var $list = this.$list.html('');
