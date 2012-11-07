@@ -1,5 +1,5 @@
 <?php
 require(GA_LIB_DIR.'/lib/idiorm.php');
-ORM::configure(config('ga.lib.db'));
-ORM::configure('username', config('ga.lib.db.user'));
-ORM::configure('password', config('ga.lib.db.pass'));
+ORM::configure('mysql:host='.config('db1.host').';dbname='.config('db1.name').';port='.config('db1.port'));
+ORM::configure('username', config('db1.user'));
+ORM::configure('password', config('db1.pass'));
