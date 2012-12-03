@@ -1,29 +1,14 @@
 <?php
-define('GA_LIB', __FILE__);
-define('GA_LIB_DIR', realpath(dirname(__FILE__).'/../'));
+// Bootstrap Slim:
+define('APP', __FILE__);
+define('ROOT', realpath(dirname(__FILE__).'/../'));
+require(ROOT.'/common/bootstrap.php');
 
-// Local configuration only
-@include(GA_LIB_DIR.'/config.php');
+// Load any additional libraries:
+require(ROOT.'/common/google/Google_Client.php');
+require(ROOT.'/common/google/contrib/Google_AnalyticsService.php');
+require(ROOT.'/common/google/contrib/Google_Oauth2Service.php');
+require(ROOT.'/common/google.php');
 
-require(GA_LIB_DIR.'/Slim/Slim.php');
-
-\Slim\Slim::registerAutoloader();
-
-$app = new \Slim\Slim(array(
-  'templates.path' => GA_LIB_DIR.'/templates',
-  'log.enabled' => true
-));  
-
-$log = $app->getLog();
-$log->setLevel(\Slim\Log::DEBUG);
-
-require(GA_LIB_DIR.'/lib/config.php');
-require(GA_LIB_DIR.'/lib/google/Google_Client.php');
-require(GA_LIB_DIR.'/lib/google/contrib/Google_AnalyticsService.php');
-require(GA_LIB_DIR.'/lib/google/contrib/Google_Oauth2Service.php');
-require(GA_LIB_DIR.'/lib/memcached.php');
-require(GA_LIB_DIR.'/lib/db.php');
-require(GA_LIB_DIR.'/lib/session.php');
-require(GA_LIB_DIR.'/lib/google.php');
-
-require(GA_LIB_DIR.'/lib/dispatcher.php');
+// Load dispatcher, which will run the app:
+require(ROOT.'/dispatcher.php');

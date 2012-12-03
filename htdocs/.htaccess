@@ -1,3 +1,5 @@
+# This rewrite ruleset works on Pagoda and works locally, where I use
+# symlinks across multiple paths to manage many local sites at a time.
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]

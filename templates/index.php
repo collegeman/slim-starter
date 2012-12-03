@@ -677,16 +677,10 @@
                   <span class="n f1 blue">19.511M</span>
                 </div>
               </div>
-              <div class="widget w1 h1">
+              <div class="widget w4 h2">
                 <div class="pad">
-                  <label><span class="f5">November</span></label>
-                  <span class="n f4 red">-00%</span>
-                </div>
-              </div>
-              <div class="widget w1 h1">
-                <div class="pad">
-                  <label><span class="f5">November</span></label>
-                  <span class="n f4 red">-00%</span>
+                  <label class="f4">November</label>
+                  <span class="n f1 blue">19.511M</span>
                 </div>
               </div>
               <div class="widget w1 h1">
