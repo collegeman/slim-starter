@@ -1,5 +1,5 @@
 web1: #component type & number
-  name: ga-lib
+  name: YOUR-APP-NAME-GOES-HERE
   document_root: htdocs
   php_version: 5.3.8
   shared_writable_dirs:
@@ -9,10 +9,10 @@ web1: #component type & number
     - curl
     - pdo_mysql
      
-db1: #component type & number 
-  name: ga-lib            #component settings
-  type: mysql
+#db1: #component type & number 
+#  name: YOUR-DB-NAME-GOES-HERE            #component settings
+#  type: mysql
    
-cache1:
-  name: ga-lib
-  type: memcached
+#cache1:
+#  name: YOUR-MEMCACHED-NAME-GOES-HERE
+#  type: memcached
