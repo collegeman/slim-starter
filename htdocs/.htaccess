@@ -6,5 +6,7 @@ RewriteRule ^index\.php$ - [L]
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^admin/.*$ admin.php [L]
+RewriteRule ^api/.*$ api.php [L]
 RewriteRule ^ - [L]
 RewriteRule . index.php [L]

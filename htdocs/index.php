@@ -4,7 +4,7 @@ define('APP', __FILE__);
 define('ROOT', realpath(dirname(__FILE__).'/../'));
 require(ROOT.'/common/bootstrap.php');
 
-// Load any additional libraries:
+// Load any additional libraries, e.g.:
 // require_once(ROOT.'/common/google/Google_Client.php');
 // require_once(ROOT.'/common/google/contrib/Google_Oauth2Service.php');
 // require_once(ROOT.'/common/google.php');
